@@ -13,10 +13,11 @@ export class ProjectListservice{
 	constructor(private _http: Http){
 
 	}
-	
+
 
 	getAll(): Observable<Array<Project>>{
-		const url = 'http://localhost:8089/projects';
+	  // Cambié el end-point para usar el servidor de Japón
+		const url = 'http://projects-api.webtraining.zone/projects';
 		const headers = new Headers({'Content-Type':'application/json'});
 		const options = new RequestOptions({
 			headers: headers
@@ -27,7 +28,7 @@ export class ProjectListservice{
 			console.log(response);
 			return response.json();
 		});
-	
-	
+
+
 	}
 }
