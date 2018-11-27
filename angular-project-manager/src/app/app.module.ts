@@ -9,8 +9,10 @@ import { HeaderComponent } from './common/header/header.component';
 import { LoaderComponent } from './common/loader/loader.component';
 import { ModelsComponent } from './auth/project-list/models/models.component';
 import { ServicesComponent } from './auth/project-list/services/services.component';
+import {RouterModule} from '@angular/router';
 
 import { ProjectListservice } from './auth/project-list/services/project-list.service';
+import {routes} from './routes';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,8 @@ import { ProjectListservice } from './auth/project-list/services/project-list.se
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    RouterModule.forRoot(routes),
   ],
   providers: [ProjectListservice],
   bootstrap: [AppComponent]
